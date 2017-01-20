@@ -1,9 +1,10 @@
 class User
-attr_reader :user_id
-attr_accessor :user_ratings
+  attr_reader :user_id, :age
+  attr_accessor :ratings
 
-  def initialize(options)
-    @user_id = options[:user_id]
-    @user_ratings = {}
+  def initialize(user_id, age)
+    @user_id = user_id
+    @age = age
+    @ratings = {}
   end
 end
