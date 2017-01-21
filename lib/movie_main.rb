@@ -1,17 +1,12 @@
 require 'csv'
 require_relative 'movie'
 
-def main
-  movies = {}
-  users = {}
-  reviews = {}
-
-end
-
+def main; end
 
 def create_movie_list
   movies = {}
-  CSV.foreach("ml-100k/u.item.csv", {:col_sep => '|', encoding: "iso-8859-1"}) do |row|
+  CSV.foreach('ml-100k/u.item.csv',
+              col_sep: '|', encoding: 'iso-8859-1') do |row|
     movie = Movie.new(movie_id: row[0].to_i, title: row[1])
     movies[movie.movie_id] = movie
   end
