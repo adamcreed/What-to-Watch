@@ -10,9 +10,12 @@ class Movie
   end
 
   def average_rating
-    # @ratings.inject(:+) / @ratings.size
     sum = 0
     @ratings.each_value { |rating| sum += rating.to_f }
-    (sum / @ratings.size).round(2)
+    (sum / @ratings.size).round(1)
+  end
+
+  def to_s
+    "Title: #{@title}\nRating: #{average_rating}"
   end
 end
