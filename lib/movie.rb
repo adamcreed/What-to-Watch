@@ -1,4 +1,4 @@
-# The movie class stores the name and total reviews for a movie
+# File creating Movie class
 class Movie
   attr_reader :movie_id, :title
   attr_accessor :ratings
@@ -6,13 +6,16 @@ class Movie
   def initialize(options)
     @movie_id = options[:movie_id]
     @title = options[:title]
-    @ratings = []
+    @ratings = {}
   end
 
   def average_rating
-    # @ratings.inject(:+) / @ratings.size
     sum = 0
-    @ratings.each { |num| sum += num }
-    sum / ratings.size
+    @ratings.each_value { |rating| sum += rating.to_f }
+    (sum / @ratings.size).round(1)
+  end
+
+  def to_s
+    "Title: #{@title}\nRating: #{average_rating}"
   end
 end

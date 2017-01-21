@@ -16,20 +16,20 @@ describe Movie do
     it 'gives the list of individual ratings' do
       # Arrange
       movie = Movie.new(movie_id: 1, title: 'Toy Story')
-      # Act
-      movie.ratings = [3, 4, 5]
-      # Assert
-      expect(movie.ratings).to eq [3, 4, 5]
+      #Act
+      movie.ratings = {1 => 3, 2 => 4, 3 => 5}
+      #Assert
+      expect(movie.ratings).to eq({1 => 3, 2 => 4, 3 => 5})
     end
   end
 
-  describe '#average_rating' do
-    it 'gives the average rating for a movie' do
-      # Arrange
+  describe "#average_rating" do
+    it "gives the average rating for a movie" do
+      #Arrange
       movie = Movie.new(movie_id: 1, title: 'Toy Story')
-      # Act
-      movie.ratings = [3, 4, 5]
-      # Assert
+      #Act
+      movie.ratings = {1 => 3, 2 => 4, 3 => 5}
+      #Assert
       expect(movie.average_rating).to eq 4
     end
   end
