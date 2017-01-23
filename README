@@ -1,0 +1,7 @@
+What to Watch
+
+A program that utilizes datasets downloaded from MovieLens (https://grouplens.org/datasets/movielens/).  The MovieLens datasets contain ratings for movies from over 900 individuals.
+
+What-to-Watch retrieves the ratings and related data and uses the data to populate several variables.  The data is largely organized into three hashes: movies_by_id, movies_by_title and users.  The first two hashes consist of keys of movie IDs or movie titles with Movie class objects that contain movie ratings.
+
+The program can make recommendations to users from the top-rated movies with movies previously seen removed.  It can also provide average ratings for each movie in the dataset.  
